@@ -26,7 +26,7 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void should_return_welcome_message_when_star_app(){
+    public void should_show_welcome_message_when_star_app(){
         bibliotecaApp.showWelcomeWords();
         assertEquals("Welcome use Biblioteca!\n", outContent.toString());
     }
