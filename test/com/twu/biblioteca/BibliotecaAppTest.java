@@ -8,7 +8,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class BibliotecaAppTest {
@@ -41,13 +40,13 @@ public class BibliotecaAppTest {
     }
 
     @Test
-    public void should_show_library_books_list(){
+    public void should_show_library_books_list() throws IOException {
         String libraryBooksString = "";
         bibliotecaApp.showLibraryBooks();
         for(int i=0;i<libraryBooks.length;i++){
             libraryBooksString +=libraryBooks[i]+"\n";
         }
-        assertEquals(libraryBooksString,outContent.toString());
+        assertTrue(outContent.toString().contains(libraryBooksString));
     }
 
 }

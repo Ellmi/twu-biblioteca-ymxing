@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.services.AppConfigHelper;
+import com.twu.biblioteca.ui.BookUIImp1;
+import com.twu.biblioteca.ui.ListBooksUIImp1;
 import com.twu.biblioteca.ui.WelcomeUIImp1;
 
 import java.io.IOException;
@@ -19,9 +21,11 @@ public class BibliotecaApp {
         System.out.println(new WelcomeUIImp1().uiDesign(welcomeWords));
     }
 
-    public void showLibraryBooks() {
+    public void showLibraryBooks() throws IOException {
+        BookUIImp1 bookUIImp1 = new BookUIImp1();
+        System.out.print(new ListBooksUIImp1().uiDesign(new AppConfigHelper().getPropertyValue("libraryBooksTitle")));
         for (String book : Library.libraryBooks) {
-            System.out.println(book);
+            System.out.println(bookUIImp1.uiDesign(book));
         }
     }
 }
