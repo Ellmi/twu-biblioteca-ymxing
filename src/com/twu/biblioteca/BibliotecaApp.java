@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.services.AppConfigHelper;
+import com.twu.biblioteca.ui.WelcomeUIImp1;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public class BibliotecaApp {
 
     public void showWelcomeWords() throws IOException {
         String welcomeWords = new AppConfigHelper().getPropertyValue("welcomeWords");
-        System.out.println(welcomeWords);
+        System.out.println(new WelcomeUIImp1().uiDesign(welcomeWords));
     }
 
     public void showLibraryBooks() {

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class BibliotecaAppTest {
 
@@ -36,7 +37,7 @@ public class BibliotecaAppTest {
     @Test
     public void should_show_welcome_message_when_star_app() throws IOException {
         bibliotecaApp.showWelcomeWords();
-        assertEquals("Welcome use Biblioteca!\n", outContent.toString());
+        assertTrue(outContent.toString().contains("Welcome use Biblioteca!"));
     }
 
     @Test
