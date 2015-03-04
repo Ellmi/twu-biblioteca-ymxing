@@ -8,7 +8,7 @@ public class ListBooksUIImp1 implements UI {
     @Override
     public String uiDesign(Object object) {
         String listBooksTitle = (String)object;
-        ui = "\n" + "*" + listBooksTitle +"\n\n";
+        ui = "\n" + "##" + listBooksTitle +"\n\n";
         return ui;
     }
 }

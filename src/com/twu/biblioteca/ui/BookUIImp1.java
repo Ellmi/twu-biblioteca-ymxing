@@ -21,7 +21,7 @@ public class BookUIImp1 implements UI{
     @Override
     public String uiDesign(Object object) {
         Book book = (Book)object;
-        ui = "[" + bookNumber +"]" + book.getBookName() + "  |  by " + book.getBookAuthor() + "  |  on " + book.getYearPublished();
+        ui = "(" + bookNumber +")" + "<"+book.getBookName()+">" + "        -- by " + book.getBookAuthor() + "  |  on " + book.getYearPublished();
         bookNumber++;
         return ui;
     }

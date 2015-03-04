@@ -35,6 +35,7 @@ public class BibliotecaAppTest {
     @Test
     public void should_show_library_books_list() throws IOException {
         bibliotecaApp.showLibraryBooks();
+        assertTrue(outContent.toString().contains("There are all the books in our library and can check out:"));
         assertTrue(outContent.toString().contains("The Jungle Book"));
         assertTrue(outContent.toString().contains("Peter"));
         assertTrue(outContent.toString().contains("Sep 14, 1913"));
