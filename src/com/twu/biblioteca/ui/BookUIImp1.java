@@ -1,5 +1,7 @@
 package com.twu.biblioteca.ui;
 
+import com.twu.biblioteca.valueObject.Book;
+
 /**
  * Created by ymxing on 3/4/15.
  */
@@ -18,8 +20,8 @@ public class BookUIImp1 implements UI{
 
     @Override
     public String uiDesign(Object object) {
-        String bookName = (String)object;
-        ui = "[" + bookNumber +"]" + bookName;
+        Book book = (Book)object;
+        ui = "[" + bookNumber +"]" + book.getBookName() + "  |  by " + book.getBookAuthor() + "  |  on " + book.getYearPublished();
         bookNumber++;
         return ui;
     }

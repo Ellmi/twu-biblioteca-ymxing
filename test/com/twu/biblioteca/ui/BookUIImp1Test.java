@@ -1,5 +1,6 @@
 package com.twu.biblioteca.ui;
 
+import com.twu.biblioteca.valueObject.Book;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class BookUIImp1Test {
 
     @Test
     public void should_use_book_ui_implement_1(){
-        String bookName = "book";
-        assertEquals("[2]book",bookUIImp1.uiDesign(bookName));
+        Book book = new Book("book","ymx","today");
+        assertEquals("[2]book  |  by ymx  |  on today",bookUIImp1.uiDesign(book));
     }
 }
