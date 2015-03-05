@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -24,6 +25,7 @@ public class BibliotecaAppTest {
     @After
     public void cleanUpStreams() {
         System.setOut(null);
+        System.setIn(System.in);
     }
 
     @Test
@@ -39,6 +41,16 @@ public class BibliotecaAppTest {
         assertTrue(outContent.toString().contains("The Jungle Book"));
         assertTrue(outContent.toString().contains("Peter"));
         assertTrue(outContent.toString().contains("Sep 14, 1913"));
+    }
+
+    @Test
+    public void should_give_a_correct_action_when_user_chose_a_option() throws IOException {
+        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+        System.setIn(in);
+        bibliotecaApp.interAction();
+        assertTrue(outContent.toString().contains("There are all the books in our library and can check out:"));
+
+
     }
 
 }
