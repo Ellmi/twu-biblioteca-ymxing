@@ -24,7 +24,13 @@ public class BibliotecaApp {
 
     public void interAction() throws IOException {
         Scanner scanner = new Scanner(System.in);
-        mainMenu.getOptions().get(Integer.parseInt(scanner.nextLine())-1).getOptionHandler().handle();
+        int userCommand = Integer.parseInt(scanner.nextLine());
+        while (userCommand <1 ||userCommand > mainMenu.getOptions().size()){
+            System.out.println(new AppConfigHelper().getPropertyValue("validOptionReminder"));
+            mainMenu.show();
+            userCommand = Integer.parseInt(scanner.nextLine());
+        }
+        mainMenu.getOptions().get(userCommand-1).getOptionHandler().handle();
     }
 
     public void showWelcomeWords() throws IOException {

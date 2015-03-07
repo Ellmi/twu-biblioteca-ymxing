@@ -37,12 +37,11 @@ public class BibliotecaAppTest {
 
     @Test
     public void should_give_a_correct_action_when_user_chose_a_option() throws IOException {
+
         ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
         System.setIn(in);
         bibliotecaApp.interAction();
         assertTrue(outContent.toString().contains("There are all the books in our library and can check out:"));
-
-
     }
 
 }
