@@ -7,14 +7,12 @@ import com.twu.biblioteca.valueObject.Option;
  */
 public class OptionUIImp1 implements UI{
 
-    private static int optionNumber = 1;
     private String ui;
 
     @Override
     public String uiDesign(Object object) {
         Option option = (Option)object;
-        ui = "[" + optionNumber +"]" + option.getOptionName();
-        optionNumber++;
+        ui = "[" + option.getOptionNumber() +"]" + option.getOptionName();
         return ui;
     }
 }

@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.ui.BookUIImp1;
+import com.twu.biblioteca.ui.OptionUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.ui.WelcomeUIImp1;
 import com.twu.biblioteca.valueObject.Book;
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
 public class BibliotecaApp {
 
-    private Menu menu =new Menu();
+    private Menu menu =new Menu(new PartTitleUIImp1(),new OptionUIImp1());
 
     public static void main(String[] args) throws IOException {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
