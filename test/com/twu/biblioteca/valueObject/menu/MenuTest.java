@@ -37,6 +37,8 @@ public class MenuTest {
         menu = new Menu(mockTitleUI,mockOptionUI);
         mockOptions.add(mockOption);
         menu.setOptions(mockOptions);
+        when(mockTitleUI.uiDesign(anyString())).thenReturn("");
+        when(mockOptionUI.uiDesign(anyString())).thenReturn("");
         menu.show();
         verify(mockTitleUI, times(1)).uiDesign(anyString());
         verify(mockOptionUI,times(1)).uiDesign(anyObject());
