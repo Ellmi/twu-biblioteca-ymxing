@@ -1,15 +1,14 @@
-package com.twu.biblioteca.valueObject;
+package com.twu.biblioteca.valueObject.menu;
 
 import com.twu.biblioteca.optionHandler.OptionHandler;
 import com.twu.biblioteca.ui.OptionUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.ui.UI;
+import com.twu.biblioteca.valueObject.Option;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertTrue;
@@ -23,7 +22,6 @@ public class MenuTest {
     private UI mockOptionUI;
     private ArrayList<Option> mockOptions;
     private OptionHandler mockOptionHandler;
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public void senUp(){
@@ -32,7 +30,6 @@ public class MenuTest {
         mockOption = mock(Option.class);
         mockOptions = new ArrayList<Option>();
         mockOptionHandler = mock(OptionHandler.class);
-        System.setOut(new PrintStream(outContent));
     }
 
     @Test

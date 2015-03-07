@@ -1,10 +1,11 @@
-package com.twu.biblioteca.valueObject;
+package com.twu.biblioteca.valueObject.menu;
 
 import com.twu.biblioteca.optionHandler.OptionHandler;
 import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.ui.OptionUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.ui.UI;
+import com.twu.biblioteca.valueObject.Option;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class Menu {
     public Menu(UI titleUI, UI optionUI) {
         this.titleUI = titleUI;
         this.optionUI = optionUI;
+        constructMenu();
     }
 
     public void show() throws IOException {
@@ -30,6 +32,9 @@ public class Menu {
             System.out.println(optionUI.uiDesign(option));
         }
     }
+
+    public void constructMenu(){}
+
     public void addOption(String optionName,OptionHandler optionHandler){
         itemNumber++;
         options.add(new Option(itemNumber,optionName,optionHandler));
