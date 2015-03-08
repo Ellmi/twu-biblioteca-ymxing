@@ -3,6 +3,7 @@ package com.twu.biblioteca.valueObject.menu;
 import com.twu.biblioteca.optionHandler.CheckoutBookOptionHandler;
 import com.twu.biblioteca.optionHandler.ListBooksOptionHandler;
 import com.twu.biblioteca.optionHandler.QuitOptionHandler;
+import com.twu.biblioteca.optionHandler.ReturnBookOptionHandler;
 import com.twu.biblioteca.ui.UI;
 
 /**
@@ -17,7 +18,8 @@ public class MainMenu extends Menu {
     @Override
     public final void constructMenu() {
         addOption("List Books", new ListBooksOptionHandler());
-        addOption("Checkout Book",new CheckoutBookOptionHandler());
+        addOption("Checkout Book", new CheckoutBookOptionHandler());
+        addOption("Return book", new ReturnBookOptionHandler());
         addOption("Quit", new QuitOptionHandler());
     }
 }
