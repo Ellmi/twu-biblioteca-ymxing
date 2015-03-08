@@ -16,4 +16,15 @@ public class Library {
         put("The Secret Garden",new Book("The Secret Garden","Follor","Jan 29, 1905",true));
         put("Peter Pan",new Book("Peter Pan","Green","Jan 9, 1910",true));}
     };
+
+    public final static Map<String,Movie>
+        libraryMovies = new HashMap<String,Movie>(){
+        {
+            put("The Grand Budapest Hotel",new Movie("The Grand Budapest Hotel","March 7, 2014","Wes Anderson",8,true));
+            put("Boyhood",new Movie("Boyhood","July 11, 2014","Richard Linklater",6,true));
+            put("Interstellar",new Movie("Interstellar","March 31, 2015","Hoyte van Hoytema",9,true));
+            put("How to Train Your Dragon 2",new Movie("How to Train Your Dragon 2","June 13, 2014","Dean DeBlois",10,true));
+            put("Maleficent",new Movie("Maleficent","May 30, 2014","Robert Stromberg",0,true));
+        }
+    };
 }
