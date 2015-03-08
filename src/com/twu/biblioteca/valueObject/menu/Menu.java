@@ -9,6 +9,7 @@ import com.twu.biblioteca.valueObject.Option;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Created by ymxing on 3/4/15.
@@ -33,12 +34,37 @@ public class Menu {
         }
     }
 
-    public void constructMenu(){}
+    public void constructMenu() {
+    }
 
-    public void addOption(String optionName,OptionHandler optionHandler){
+    public void addOption(String optionName, OptionHandler optionHandler) {
         itemNumber++;
-        options.add(new Option(itemNumber,optionName,optionHandler));
+        options.add(new Option(itemNumber, optionName, optionHandler));
 
+    }
+
+    public int askForAValidSelection() throws IOException {
+        int userCommand = readNextCommand();
+        while (userCommand < 1 || userCommand > getOptions().size()) {
+            System.out.println(new AppConfigHelper().getPropertyValue("validOptionReminder"));
+            userCommand = readNextCommand();
+        }
+        return userCommand;
+    }
+
+    public int readNextCommand() {
+        int userCommand = 0;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            userCommand = Integer.parseInt(scanner.nextLine());
+        } catch (NumberFormatException ex) {
+            System.out.println("Not a number !");
+        }
+        return userCommand;
+    }
+
+    public void interActOption(int userChoose) throws IOException {
+        getOptions().get(userChoose-1).getOptionHandler().handle();
     }
 
     public ArrayList<Option> getOptions() {
