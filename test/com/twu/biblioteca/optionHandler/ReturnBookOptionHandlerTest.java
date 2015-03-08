@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class ReturnBookOptionHandlerTest {
     private ReturnBookOptionHandler returnBookOptionHandler;
@@ -36,4 +37,12 @@ public class ReturnBookOptionHandlerTest {
         assertEquals(true,Library.libraryBooks.get("Black Beauty").isCheckoutable());
     }
 
+    @Test
+    public void should_give_return_successful_message_when_succeeded() throws IOException {
+        Library.libraryBooks.get("Black Beauty").setCheckoutable(false);
+        ByteArrayInputStream in = new ByteArrayInputStream("Black Beauty".getBytes());
+        System.setIn(in);
+        returnBookOptionHandler.handle();
+        assertTrue(outContent.toString().contains("Thank you for returning the book."));
+    }
 }

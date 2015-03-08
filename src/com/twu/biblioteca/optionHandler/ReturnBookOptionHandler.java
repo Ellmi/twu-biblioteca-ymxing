@@ -1,5 +1,6 @@
 package com.twu.biblioteca.optionHandler;
 
+import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.valueObject.Book;
 import com.twu.biblioteca.valueObject.Library;
 
@@ -18,5 +19,6 @@ public class ReturnBookOptionHandler implements OptionHandler{
         Scanner scanner = new Scanner(System.in);
         Book book = Library.libraryBooks.get(scanner.nextLine());
         book.setCheckoutable(true);
+        System.out.println(new AppConfigHelper().getPropertyValue("ReturnSuccessful"));
     }
 }
