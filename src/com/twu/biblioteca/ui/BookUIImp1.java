@@ -7,15 +7,15 @@ import com.twu.biblioteca.valueObject.Book;
  */
 public class BookUIImp1 implements UI{
 
-    private static int bookNumber = 1;
+    private int bookNumber = 1;
     private String ui;
 
-    public static int getBookNumber() {
+    public int getBookNumber() {
         return bookNumber;
     }
 
-    public static void setBookNumber(int bookNumber) {
-        BookUIImp1.bookNumber = bookNumber;
+    public void setBookNumber(int bookNumber) {
+        this.bookNumber = bookNumber;
     }
 
     @Override

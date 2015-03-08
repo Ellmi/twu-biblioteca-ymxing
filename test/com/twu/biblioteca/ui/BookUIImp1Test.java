@@ -18,7 +18,7 @@ public class BookUIImp1Test {
 
     @Test
     public void should_use_book_ui_implement_1(){
-        Book book = new Book("book","ymx","today");
+        Book book = new Book("book","ymx","today",true);
         assertEquals("(2)<book>        -- by ymx  |  on today",bookUIImp1.uiDesign(book));
     }
 }

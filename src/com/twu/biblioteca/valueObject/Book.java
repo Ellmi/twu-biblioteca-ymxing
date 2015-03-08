@@ -7,11 +7,13 @@ public class Book {
     private String bookName;
     private String bookAuthor;
     private String yearPublished;
+    private boolean checkoutable;
 
-    public Book(String bookName,String bookAuthor,String date){
+    public Book(String bookName,String bookAuthor,String date,boolean checkoutable){
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.yearPublished = date;
+        this.checkoutable = checkoutable;
     }
 
     public String getBookName() {
@@ -36,5 +38,13 @@ public class Book {
 
     public void setYearPublished(String yearPublished) {
         this.yearPublished = yearPublished;
+    }
+
+    public boolean isCheckoutable() {
+        return checkoutable;
+    }
+
+    public void setCheckoutable(boolean checkoutable) {
+        this.checkoutable = checkoutable;
     }
 }

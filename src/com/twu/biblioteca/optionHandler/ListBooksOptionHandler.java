@@ -17,7 +17,9 @@ public class ListBooksOptionHandler implements OptionHandler {
         BookUIImp1 bookUIImp1 = new BookUIImp1();
         System.out.print(new PartTitleUIImp1().uiDesign(new AppConfigHelper().getPropertyValue("libraryBooksTitle")));
         for (Book book : Library.libraryBooks.values()) {
-            System.out.println(bookUIImp1.uiDesign(book));
+            if(book.isCheckoutable()){
+                System.out.println(bookUIImp1.uiDesign(book));
+            }
         }
     }
 }
