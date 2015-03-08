@@ -6,17 +6,22 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class CheckoutBookOptionHandlerTest {
 
     private CheckoutBookOptionHandler checkoutBookOptionHandler;
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public void setUp() throws Exception {
         checkoutBookOptionHandler = new CheckoutBookOptionHandler();
+        System.setOut(new PrintStream(outContent));
     }
 
     @After
@@ -30,5 +35,13 @@ public class CheckoutBookOptionHandlerTest {
         System.setIn(in);
         checkoutBookOptionHandler.handle();
         assertFalse(Library.libraryBooks.get("Black Beauty").isCheckoutable());
+    }
+
+    @Test
+    public void should_give_checkout_successful_message_when_succeeded() throws IOException {
+        ByteArrayInputStream in = new ByteArrayInputStream("Black Beauty".getBytes());
+        System.setIn(in);
+        checkoutBookOptionHandler.handle();
+        assertTrue(outContent.toString().contains("Thank you! Enjoy the book."));
     }
 }
