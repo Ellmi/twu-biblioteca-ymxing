@@ -1,9 +1,6 @@
 package com.twu.biblioteca.valueObject.menu;
 
-import com.twu.biblioteca.optionHandler.CheckoutBookOptionHandler;
-import com.twu.biblioteca.optionHandler.ListBooksOptionHandler;
-import com.twu.biblioteca.optionHandler.QuitOptionHandler;
-import com.twu.biblioteca.optionHandler.ReturnBookOptionHandler;
+import com.twu.biblioteca.optionHandler.*;
 import com.twu.biblioteca.ui.UI;
 
 /**
@@ -20,6 +17,7 @@ public class MainMenu extends Menu {
         addOption("List Books", new ListBooksOptionHandler());
         addOption("Checkout Book", new CheckoutBookOptionHandler());
         addOption("Return book", new ReturnBookOptionHandler());
+        addOption("List Movies", new ListMoviesOptionHandler());
         addOption("Quit", new QuitOptionHandler());
     }
 }

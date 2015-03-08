@@ -20,13 +20,17 @@ public class MovieUIImp1 implements UI{
     @Override
     public String uiDesign(Object object) {
         Movie movie = (Movie)object;
-        ui = "(" + movieNumber +")" + "<"+movie.getMovieName() + ">" + "        -- by " + movie.getDirector() + "  |  on " + movie.getYear() + "   rating:" + getRating(movie);
+        ui = "(" + movieNumber +")" + "<"+movie.getMovieName() + ">" + "        -- by " + movie.getDirector() + "  |  on " + movie.getYear() + getRating(movie);
         movieNumber++;
         return ui;
     }
 
     public String getRating(Movie movie) {
-        String rating = "";
+        String rating;
+        if(movie.getRating()==0){
+            rating = "   unrated";
+            return rating;
+        }else {rating = "   rating:";}
         for(int starAccount = 0;starAccount<movie.getRating();starAccount++){
             rating += "*";
         }

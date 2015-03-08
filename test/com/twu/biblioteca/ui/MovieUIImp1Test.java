@@ -24,8 +24,14 @@ public class MovieUIImp1Test {
     }
 
     @Test
-    public void should_give_a_correct_rating_string(){
-        assertEquals("**",movieUIImp1.getRating(movie));
+    public void should_give_2_stars_rating_string(){
+        assertEquals("   rating:**",movieUIImp1.getRating(movie));
 
+    }
+
+    @Test
+    public void should_give_unrated_rating_string(){
+        movie = new Movie("movie","today","director",0,true);
+        assertEquals("   unrated",movieUIImp1.getRating(movie));
     }
 }
