@@ -45,4 +45,12 @@ public class ReturnBookOptionHandlerTest {
         returnBookOptionHandler.handle();
         assertTrue(outContent.toString().contains("Thank you for returning the book."));
     }
+
+    @Test
+    public void should_give_checkout_faild_message_when_faild() throws IOException {
+        ByteArrayInputStream in = new ByteArrayInputStream("Black".getBytes());
+        System.setIn(in);
+        returnBookOptionHandler.handle();
+        assertTrue(outContent.toString().contains("That is not a valid book to return."));
+    }
 }

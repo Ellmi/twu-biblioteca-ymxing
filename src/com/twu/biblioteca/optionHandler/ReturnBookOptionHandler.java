@@ -18,7 +18,11 @@ public class ReturnBookOptionHandler implements OptionHandler{
         System.out.println("Please enter the book name which you want to return:");
         Scanner scanner = new Scanner(System.in);
         Book book = Library.libraryBooks.get(scanner.nextLine());
-        book.setCheckoutable(true);
-        System.out.println(new AppConfigHelper().getPropertyValue("ReturnSuccessful"));
+        if(book == null || book.isCheckoutable()){
+            System.out.println(new AppConfigHelper().getPropertyValue("returnFaild"));
+        }else {
+            book.setCheckoutable(true);
+            System.out.println(new AppConfigHelper().getPropertyValue("returnSuccessful"));
+        }
     }
 }
