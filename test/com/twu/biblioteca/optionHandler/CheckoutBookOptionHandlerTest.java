@@ -39,9 +39,18 @@ public class CheckoutBookOptionHandlerTest {
 
     @Test
     public void should_give_checkout_successful_message_when_succeeded() throws IOException {
+        Library.libraryBooks.get("Black Beauty").setCheckoutable(true);
         ByteArrayInputStream in = new ByteArrayInputStream("Black Beauty".getBytes());
         System.setIn(in);
         checkoutBookOptionHandler.handle();
         assertTrue(outContent.toString().contains("Thank you! Enjoy the book."));
+    }
+
+    @Test
+    public void should_give_checkout_faild_message_when_faild() throws IOException {
+        ByteArrayInputStream in = new ByteArrayInputStream("Black".getBytes());
+        System.setIn(in);
+        checkoutBookOptionHandler.handle();
+        assertTrue(outContent.toString().contains("That book is not available."));
     }
 }

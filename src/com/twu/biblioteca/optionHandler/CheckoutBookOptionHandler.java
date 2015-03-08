@@ -16,7 +16,11 @@ public class CheckoutBookOptionHandler implements OptionHandler {
         System.out.println("Please enter the book name which you want to checkout:");
         Scanner scanner = new Scanner(System.in);
         Book book = Library.libraryBooks.get(scanner.nextLine());
-        book.setCheckoutable(false);
-        System.out.println(new AppConfigHelper().getPropertyValue("checkoutSuccessful"));
+        if(book == null || !book.isCheckoutable()){
+            System.out.println(new AppConfigHelper().getPropertyValue("checkoutFaild"));
+            }else {
+            book.setCheckoutable(false);
+            System.out.println(new AppConfigHelper().getPropertyValue("checkoutSuccessful"));
+        }
     }
 }
