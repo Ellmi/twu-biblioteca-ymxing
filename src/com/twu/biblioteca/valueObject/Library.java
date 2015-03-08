@@ -31,8 +31,8 @@ public class Library {
     public final static Map<String,User>
             libraryUsers = new HashMap<String,User>(){
         {
-            put("ShengjiLI",new User("010-2222","ShengjiLI","aaaaaa","ShengjiLI@a.com","11111111111"));
-            put("MinerSHEN",new User("020-1111","MinerSHEN","bbbbbb","MinerSHEN@b.com","22222222222"));
+            put("010-2222",new User("010-2222","ShengjiLI","aaaaaa","ShengjiLI@a.com","11111111111"));
+            put("020-1111",new User("020-1111","MinerSHEN","bbbbbb","MinerSHEN@b.com","22222222222"));
         }
     };
 }
