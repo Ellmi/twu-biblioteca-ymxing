@@ -27,4 +27,12 @@ public class Library {
             put("Maleficent",new Movie("Maleficent","May 30, 2014","Robert Stromberg",0,true));
         }
     };
+
+    public final static Map<String,User>
+            libraryUsers = new HashMap<String,User>(){
+        {
+            put("ShengjiLI",new User("010-2222","ShengjiLI","aaaaaa","ShengjiLI@a.com","11111111111"));
+            put("MinerSHEN",new User("020-1111","MinerSHEN","bbbbbb","MinerSHEN@b.com","22222222222"));
+        }
+    };
 }
