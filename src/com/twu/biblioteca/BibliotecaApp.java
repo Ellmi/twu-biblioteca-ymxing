@@ -24,7 +24,7 @@ public class BibliotecaApp {
         mainMenu.show();
         userCommand=mainMenu.readNextCommand();
         while (userCommand != mainMenu.getOptions().size()){
-            mainMenu.interActOption(mainMenu.askForAValidSelection());
+            mainMenu.interActOption(mainMenu.askForAValidSelection(userCommand));
             mainMenu.show();
         }
     }

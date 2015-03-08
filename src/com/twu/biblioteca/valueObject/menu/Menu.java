@@ -43,8 +43,8 @@ public class Menu {
 
     }
 
-    public int askForAValidSelection() throws IOException {
-        int userCommand = readNextCommand();
+    public int askForAValidSelection(int command) throws IOException {
+        int userCommand = command;
         while (userCommand < 1 || userCommand > getOptions().size()) {
             System.out.println(new AppConfigHelper().getPropertyValue("validOptionReminder"));
             userCommand = readNextCommand();
