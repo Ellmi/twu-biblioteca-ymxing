@@ -6,6 +6,7 @@ import com.twu.biblioteca.ui.OptionUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.ui.UI;
 import com.twu.biblioteca.valueObject.Option;
+import com.twu.biblioteca.valueObject.User;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,6 +29,7 @@ public class MenuTest {
     private ArrayList<Option> mockOptions;
     private OptionHandler mockOptionHandler;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private User mockUser;
 
     @Before
     public void senUp(){
@@ -38,6 +40,7 @@ public class MenuTest {
         mockOptionHandler = mock(OptionHandler.class);
         System.setOut(new PrintStream(outContent));
         menu = new Menu(mockTitleUI,mockOptionUI);
+        mockUser = mock(User.class);
     }
 
     @Test
@@ -67,8 +70,8 @@ public class MenuTest {
         menu.setOptions(mockOptions);
         mockOptions.add(mockOption);
         when(mockOption.getOptionHandler()).thenReturn(mockListBooksOptionHandler);
-        menu.interActOption(mockUserChoose);
-        verify(mockListBooksOptionHandler,times(1)).handle();
+        menu.interActOption(mockUserChoose, mockUser);
+        verify(mockListBooksOptionHandler,times(1)).handle(mockUser);
     }
 
     @Test

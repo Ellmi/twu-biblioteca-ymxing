@@ -19,6 +19,6 @@ public class QuitOptionHandlerTest {
 
     @Test
     public void should_exit_when_user_choose_quit_option() throws IOException {
-        quitOptionHandler.handle();
+        quitOptionHandler.handle(null);
     }
 }

@@ -5,6 +5,7 @@ import com.twu.biblioteca.ui.BookUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.valueObject.Book;
 import com.twu.biblioteca.valueObject.Library;
+import com.twu.biblioteca.valueObject.User;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
  */
 public class ListBooksOptionHandler implements OptionHandler {
     @Override
-    public void handle() throws IOException {
+    public void handle(User user) throws IOException {
         BookUIImp1 bookUIImp1 = new BookUIImp1();
         System.out.print(new PartTitleUIImp1().uiDesign(new AppConfigHelper().getPropertyValue("libraryBooksTitle")));
         for (Book book : Library.libraryBooks.values()) {

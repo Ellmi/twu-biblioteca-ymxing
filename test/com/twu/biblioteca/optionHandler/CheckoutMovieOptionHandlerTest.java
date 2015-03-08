@@ -1,6 +1,7 @@
 package com.twu.biblioteca.optionHandler;
 
 import com.twu.biblioteca.valueObject.Library;
+import com.twu.biblioteca.valueObject.User;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,15 +13,18 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
 
 public class CheckoutMovieOptionHandlerTest {
     private CheckoutMovieOptionHandler checkoutMovieOptionHandler;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private User mockuser;
 
     @Before
     public void setUp() throws Exception {
         checkoutMovieOptionHandler = new CheckoutMovieOptionHandler();
         System.setOut(new PrintStream(outContent));
+        mockuser = mock(User.class);
     }
 
     @After
@@ -32,7 +36,7 @@ public class CheckoutMovieOptionHandlerTest {
     public void should_changed_the_movie_checkoutable_status_as_false() throws IOException {
         ByteArrayInputStream in = new ByteArrayInputStream("Interstellar".getBytes());
         System.setIn(in);
-        checkoutMovieOptionHandler.handle();
+        checkoutMovieOptionHandler.handle(mockuser);
         assertFalse(Library.libraryMovies.get("Interstellar").isCheckoutable());
     }
 
@@ -41,7 +45,7 @@ public class CheckoutMovieOptionHandlerTest {
         Library.libraryMovies.get("Interstellar").setCheckoutable(true);
         ByteArrayInputStream in = new ByteArrayInputStream("Interstellar".getBytes());
         System.setIn(in);
-        checkoutMovieOptionHandler.handle();
+        checkoutMovieOptionHandler.handle(mockuser);
         assertTrue(outContent.toString().contains("Thank you! Enjoy the movie."));
     }
 
@@ -50,7 +54,7 @@ public class CheckoutMovieOptionHandlerTest {
         Library.libraryMovies.get("Interstellar").setCheckoutable(false);
         ByteArrayInputStream in = new ByteArrayInputStream("Interstellar".getBytes());
         System.setIn(in);
-        checkoutMovieOptionHandler.handle();
+        checkoutMovieOptionHandler.handle(mockuser);
         assertTrue(outContent.toString().contains("That movie is not available."));
     }
 }

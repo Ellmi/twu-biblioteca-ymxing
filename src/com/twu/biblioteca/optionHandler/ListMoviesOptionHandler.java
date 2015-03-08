@@ -5,6 +5,7 @@ import com.twu.biblioteca.ui.MovieUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.valueObject.Library;
 import com.twu.biblioteca.valueObject.Movie;
+import com.twu.biblioteca.valueObject.User;
 
 import java.io.IOException;
 
@@ -13,7 +14,7 @@ import java.io.IOException;
  */
 public class ListMoviesOptionHandler implements OptionHandler{
     @Override
-    public void handle() throws IOException {
+    public void handle(User user) throws IOException {
         MovieUIImp1 movieUIImp1 = new MovieUIImp1();
         System.out.print(new PartTitleUIImp1().uiDesign(new AppConfigHelper().getPropertyValue("libraryMoviesTitle")));
         for (Movie movie : Library.libraryMovies.values()) {

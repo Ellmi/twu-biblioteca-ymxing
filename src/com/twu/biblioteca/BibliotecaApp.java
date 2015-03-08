@@ -4,13 +4,14 @@ import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.ui.OptionUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.ui.WelcomeUIImp1;
+import com.twu.biblioteca.valueObject.User;
 import com.twu.biblioteca.valueObject.menu.MainMenu;
 import com.twu.biblioteca.valueObject.menu.Menu;
 
 import java.io.IOException;
 
 public class BibliotecaApp {
-
+    private static User user = null;
 
     public static void main(String[] args) throws IOException {
         BibliotecaApp bibliotecaApp = new BibliotecaApp();
@@ -24,7 +25,7 @@ public class BibliotecaApp {
         mainMenu.show();
         userCommand=mainMenu.readNextCommand();
         while (userCommand != mainMenu.getOptions().size()){
-            mainMenu.interActOption(mainMenu.askForAValidSelection(userCommand));
+            mainMenu.interActOption(mainMenu.askForAValidSelection(userCommand),user);
             mainMenu.show();
             userCommand = mainMenu.readNextCommand();
         }

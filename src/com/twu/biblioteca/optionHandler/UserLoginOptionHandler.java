@@ -12,15 +12,20 @@ import java.util.Scanner;
  */
 public class UserLoginOptionHandler implements OptionHandler {
     @Override
-    public void handle() throws IOException {
+    public void handle(User user) throws IOException {
+        if(user != null){
+            System.out.println("You have logined!");
+            return;
+        }
         String userNumber;
         String userPassWord;
         Scanner scanner = new Scanner(System.in);
         userNumber = askForAccount(scanner);
         userPassWord = askForAccountPassword(scanner);
-        User user = Library.libraryUsers.get(userNumber);
-        if(user!=null && user.getPassworkd().equals(userPassWord)){
+        User userWantLogin = Library.libraryUsers.get(userNumber);
+        if(userWantLogin!=null && userWantLogin.getPassworkd().equals(userPassWord)){
             Library.libraryUsers.get(userNumber).setLogined(true);
+            user = userWantLogin;
             System.out.println(new AppConfigHelper().getPropertyValue("loginSuccessful"));
         }else {
             System.out.println(new AppConfigHelper().getPropertyValue("loginError"));

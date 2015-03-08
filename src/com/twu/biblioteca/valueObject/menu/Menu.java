@@ -6,6 +6,7 @@ import com.twu.biblioteca.ui.OptionUIImp1;
 import com.twu.biblioteca.ui.PartTitleUIImp1;
 import com.twu.biblioteca.ui.UI;
 import com.twu.biblioteca.valueObject.Option;
+import com.twu.biblioteca.valueObject.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,8 +64,8 @@ public class Menu {
         return userCommand;
     }
 
-    public void interActOption(int userChoose) throws IOException {
-        getOptions().get(userChoose-1).getOptionHandler().handle();
+    public void interActOption(int userChoose, User user) throws IOException {
+        getOptions().get(userChoose-1).getOptionHandler().handle(user);
     }
 
     public ArrayList<Option> getOptions() {

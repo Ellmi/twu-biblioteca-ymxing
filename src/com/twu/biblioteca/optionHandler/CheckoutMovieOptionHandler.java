@@ -3,6 +3,7 @@ package com.twu.biblioteca.optionHandler;
 import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.valueObject.Library;
 import com.twu.biblioteca.valueObject.Movie;
+import com.twu.biblioteca.valueObject.User;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -12,7 +13,11 @@ import java.util.Scanner;
  */
 public class CheckoutMovieOptionHandler implements OptionHandler{
     @Override
-    public void handle() throws IOException {
+    public void handle(User user) throws IOException {
+        if(user == null){
+            System.out.println(new AppConfigHelper().getPropertyValue("loginReminder"));
+            new UserLoginOptionHandler().handle(user);
+        }
         System.out.println("Please enter the movie name which you want to checkout:");
         Scanner scanner = new Scanner(System.in);
         Movie movie = Library.libraryMovies.get(scanner.nextLine());

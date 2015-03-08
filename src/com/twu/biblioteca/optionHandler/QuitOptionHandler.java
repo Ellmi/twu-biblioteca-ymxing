@@ -1,6 +1,7 @@
 package com.twu.biblioteca.optionHandler;
 
 import com.twu.biblioteca.services.AppConfigHelper;
+import com.twu.biblioteca.valueObject.User;
 
 import java.io.IOException;
 
@@ -10,7 +11,7 @@ import java.io.IOException;
 public class QuitOptionHandler implements OptionHandler{
 
     @Override
-    public void handle() throws IOException {
+    public void handle(User user) throws IOException {
         System.out.println(new AppConfigHelper().getPropertyValue("quitMessage"));
         System.exit(0);
     }

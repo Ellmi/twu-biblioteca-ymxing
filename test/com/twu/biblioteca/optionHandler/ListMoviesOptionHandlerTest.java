@@ -21,7 +21,7 @@ public class ListMoviesOptionHandlerTest {
 
     @Test
     public void should_show_library_movies_list() throws IOException {
-        listMoviesOptionHandler.handle();
+        listMoviesOptionHandler.handle(null);
         assertTrue(outContent.toString().contains("There are all the movies in our library and can check out:"));
         assertTrue(outContent.toString().contains("Interstellar"));
         assertTrue(outContent.toString().contains("Hoyte van Hoytema"));
