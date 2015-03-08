@@ -48,6 +48,7 @@ public class CheckoutBookOptionHandlerTest {
 
     @Test
     public void should_give_checkout_faild_message_when_faild() throws IOException {
+        Library.libraryBooks.get("Black Beauty").setCheckoutable(false);
         ByteArrayInputStream in = new ByteArrayInputStream("Black".getBytes());
         System.setIn(in);
         checkoutBookOptionHandler.handle();
