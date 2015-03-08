@@ -16,7 +16,7 @@ public class ListBooksOptionHandler implements OptionHandler {
     public void handle() throws IOException {
         BookUIImp1 bookUIImp1 = new BookUIImp1();
         System.out.print(new PartTitleUIImp1().uiDesign(new AppConfigHelper().getPropertyValue("libraryBooksTitle")));
-        for (Book book : Library.libraryBooks) {
+        for (Book book : Library.libraryBooks.values()) {
             System.out.println(bookUIImp1.uiDesign(book));
         }
     }
