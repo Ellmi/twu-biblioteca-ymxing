@@ -1,5 +1,6 @@
 package com.twu.biblioteca.optionHandler;
 
+import com.twu.biblioteca.BibliotecaApp;
 import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.valueObject.Library;
 import com.twu.biblioteca.valueObject.User;
@@ -25,7 +26,7 @@ public class UserLoginOptionHandler implements OptionHandler {
         User userWantLogin = Library.libraryUsers.get(userNumber);
         if(userWantLogin!=null && userWantLogin.getPassworkd().equals(userPassWord)){
             Library.libraryUsers.get(userNumber).setLogined(true);
-            user = userWantLogin;
+            BibliotecaApp.setUser(userWantLogin);
             System.out.println(new AppConfigHelper().getPropertyValue("loginSuccessful"));
         }else {
             System.out.println(new AppConfigHelper().getPropertyValue("loginError"));

@@ -36,5 +36,11 @@ public class BibliotecaApp {
         System.out.println(new WelcomeUIImp1().uiDesign(welcomeWords));
     }
 
+    public static User getUser() {
+        return user;
+    }
 
+    public static void setUser(User user) {
+        BibliotecaApp.user = user;
+    }
 }
