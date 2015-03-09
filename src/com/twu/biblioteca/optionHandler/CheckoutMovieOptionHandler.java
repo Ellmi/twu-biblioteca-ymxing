@@ -17,7 +17,7 @@ public class CheckoutMovieOptionHandler implements OptionHandler{
     public void handle(User user) throws IOException {
         if(user == null){
             System.out.println(new AppConfigHelper().getPropertyValue("loginReminder"));
-            new UserLoginOptionHandler().handle(user);
+            new UserLoginOptionHandler().handle(null);
         }
         if(BibliotecaApp.getUser() == null){return;}
         System.out.println("Please enter the movie name which you want to checkout:");
@@ -27,6 +27,7 @@ public class CheckoutMovieOptionHandler implements OptionHandler{
             System.out.println(new AppConfigHelper().getPropertyValue("checkoutMovieFaild"));
         }else {
             movie.setCheckoutable(false);
+            Library.libraryUsers.get(BibliotecaApp.getUser().getUserLibraryNumber()).getCheckoutedMovies().put(movie.getMovieName(),movie);
             System.out.println(new AppConfigHelper().getPropertyValue("checkoutMovieSuccessful"));
         }
     }

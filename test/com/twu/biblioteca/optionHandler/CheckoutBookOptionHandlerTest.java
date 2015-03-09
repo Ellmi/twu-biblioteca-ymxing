@@ -1,5 +1,6 @@
 package com.twu.biblioteca.optionHandler;
 
+import com.twu.biblioteca.BibliotecaApp;
 import com.twu.biblioteca.valueObject.Library;
 import com.twu.biblioteca.valueObject.User;
 import org.junit.After;
@@ -13,32 +14,45 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Mockito.mock;
 
 public class CheckoutBookOptionHandlerTest {
 
     private CheckoutBookOptionHandler checkoutBookOptionHandler;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private User mockUser;
+    private User user;
 
     @Before
     public void setUp() throws Exception {
         checkoutBookOptionHandler = new CheckoutBookOptionHandler();
         System.setOut(new PrintStream(outContent));
-        mockUser = mock(User.class);
+        user = new User("010-2222",null,null,null,null);
+        BibliotecaApp.setUser(user);
     }
 
     @After
     public void resetBookStatus() throws Exception {
         Library.libraryBooks.get("Black Beauty").setCheckoutable(true);
+        Library.libraryUsers.get(user.getUserLibraryNumber()).getCheckoutedBooks().clear();
     }
 
     @Test
     public void should_changed_the_book_checkoutable_status_as_false() throws IOException {
         ByteArrayInputStream in = new ByteArrayInputStream("Black Beauty".getBytes());
         System.setIn(in);
-        checkoutBookOptionHandler.handle(mockUser);
+        checkoutBookOptionHandler.handle(user);
         assertFalse(Library.libraryBooks.get("Black Beauty").isCheckoutable());
+        assertTrue(Library.libraryUsers.get(user.getUserLibraryNumber()).getCheckoutedBooks().containsKey("Black Beauty"));
+
+    }
+
+    @Test
+    public void should_not_checkout_the_book_if_the_user_not_login_successful() throws IOException {
+        BibliotecaApp.setUser(null);
+        ByteArrayInputStream in = new ByteArrayInputStream("Black Beauty".getBytes());
+        System.setIn(in);
+        checkoutBookOptionHandler.handle(user);
+        assertTrue(Library.libraryBooks.get("Black Beauty").isCheckoutable());
+        assertFalse(Library.libraryUsers.get(user.getUserLibraryNumber()).getCheckoutedBooks().containsKey("Black Beauty"));
     }
 
     @Test
@@ -46,7 +60,7 @@ public class CheckoutBookOptionHandlerTest {
         Library.libraryBooks.get("Black Beauty").setCheckoutable(true);
         ByteArrayInputStream in = new ByteArrayInputStream("Black Beauty".getBytes());
         System.setIn(in);
-        checkoutBookOptionHandler.handle(mockUser);
+        checkoutBookOptionHandler.handle(user);
         assertTrue(outContent.toString().contains("Thank you! Enjoy the book."));
     }
 
@@ -55,7 +69,7 @@ public class CheckoutBookOptionHandlerTest {
         Library.libraryBooks.get("Black Beauty").setCheckoutable(false);
         ByteArrayInputStream in = new ByteArrayInputStream("Black".getBytes());
         System.setIn(in);
-        checkoutBookOptionHandler.handle(mockUser);
+        checkoutBookOptionHandler.handle(user);
         assertTrue(outContent.toString().contains("That book is not available."));
     }
 }
