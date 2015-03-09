@@ -11,7 +11,7 @@ public class UserUIImp1 implements UI {
     @Override
     public String uiDesign(Object object) {
         User user = (User)object;
-        ui = "[*" + user.getName() +"*]" + "     email:"+user.getEmailAddress() + "     phone:" + user.getPhoneNumber();
+        ui = "USER INFO: [*" + user.getName() +"*]" + "     email:"+user.getEmailAddress() + "     phone:" + user.getPhoneNumber();
         return ui;
     }
 }

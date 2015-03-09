@@ -17,7 +17,7 @@ public class UserUIImp1Test {
     @Test
     public void should_use_part_title_ui_implement_1(){
         User user = new User("010-2222","ShengjiLI","aaaaaa","ShengjiLI@a.com","11111111111");
-        assertEquals("[*ShengjiLI*]     email:ShengjiLI@a.com     phone:11111111111", userUIImp1.uiDesign(user));
+        assertEquals("USER INFO: [*ShengjiLI*]     email:ShengjiLI@a.com     phone:11111111111", userUIImp1.uiDesign(user));
     }
 
 }

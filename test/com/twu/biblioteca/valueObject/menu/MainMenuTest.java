@@ -22,6 +22,6 @@ public class MainMenuTest {
     @Test
     public void should_add_one_option_to_main_menu(){
         menu = new MainMenu(mockTitleUI,mockOptionUI);
-        assertTrue(menu.getItemNumber()==7);
+        assertTrue(menu.getItemNumber()==8);
     }
 }

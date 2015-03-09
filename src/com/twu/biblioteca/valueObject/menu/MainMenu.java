@@ -20,6 +20,7 @@ public class MainMenu extends Menu {
         addOption("List Movies", new ListMoviesOptionHandler());
         addOption("Checkout Movie", new CheckoutMovieOptionHandler());
         addOption("User Login", new UserLoginOptionHandler());
+        addOption("Show User Infomation", new ShowUserInformationOptionHandler());
         addOption("Quit", new QuitOptionHandler());
     }
 }
