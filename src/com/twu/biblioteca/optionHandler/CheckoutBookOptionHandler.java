@@ -1,5 +1,6 @@
 package com.twu.biblioteca.optionHandler;
 
+import com.twu.biblioteca.BibliotecaApp;
 import com.twu.biblioteca.services.AppConfigHelper;
 import com.twu.biblioteca.valueObject.Book;
 import com.twu.biblioteca.valueObject.Library;
@@ -18,6 +19,7 @@ public class CheckoutBookOptionHandler implements OptionHandler {
             System.out.println(new AppConfigHelper().getPropertyValue("loginReminder"));
             new UserLoginOptionHandler().handle(user);
         }
+        if(BibliotecaApp.getUser() == null){return;}
         System.out.println("Please enter the book name which you want to checkout:");
         Scanner scanner = new Scanner(System.in);
         Book book = Library.libraryBooks.get(scanner.nextLine());

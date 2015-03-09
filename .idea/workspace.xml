@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f3172e5-430e-4493-a60e-701ba06ec075" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/UserLoginOptionHandler.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/UserLoginOptionHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java" />
     </list>
     <ignored path="biblioteca.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CheckoutMovieOptionHandler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CheckoutMovieOptionHandler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.6785714" vertical-offset="171" max-vertical-offset="741">
+              <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserLoginOptionHandler.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UserLoginOptionHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/UserLoginOptionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5415473" vertical-offset="343" max-vertical-offset="1045">
+            <state vertical-scroll-proportion="0.0" vertical-offset="343" max-vertical-offset="1045">
               <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,8 +77,8 @@
       <file leaf-file-name="CheckoutBookOptionHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="589">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="608">
+              <caret line="21" column="51" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -188,8 +187,6 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/valueObject/Library.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/valueObject/menu/Menu.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/optionHandler/ListMoviesOptionHandlerTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/optionHandler/ListBooksOptionHandlerTest.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/optionHandler/QuitOptionHandlerTest.java" />
@@ -199,6 +196,8 @@
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandlerTest.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/UserLoginOptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java" />
       </list>
     </option>
   </component>
@@ -966,12 +965,12 @@
       <workItem from="1425727124116" duration="12051000" />
       <workItem from="1425788464285" duration="4411000" />
       <workItem from="1425830772640" duration="10016000" />
-      <workItem from="1425904957146" duration="1127000" />
+      <workItem from="1425904957146" duration="1422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89941000" />
+    <option name="totallyTimeSpent" value="90236000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="6" />
@@ -1060,13 +1059,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java</url>
-          <line>16</line>
+          <line>17</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java</url>
-          <line>21</line>
+          <line>23</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -1459,16 +1458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/valueObject/Library.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="817">
@@ -1481,14 +1470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1577">
           <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="98" max-vertical-offset="589">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1507,8 +1488,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/UserLoginOptionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5415473" vertical-offset="343" max-vertical-offset="1045">
+        <state vertical-scroll-proportion="0.0" vertical-offset="343" max-vertical-offset="1045">
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutBookOptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="608">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/optionHandler/CheckoutMovieOptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6785714" vertical-offset="171" max-vertical-offset="741">
+          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
